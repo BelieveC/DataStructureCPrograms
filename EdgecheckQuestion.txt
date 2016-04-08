@@ -1,0 +1,11 @@
+For an undirected, unweighted graph G with n vertices if two vertices vi, vj are connected.
+Input: (n, Vi, Vj, G)
+5
+2 4
+0 1 1 0 0
+1 0 1 0 0
+1 1 0 0 0
+0 0 0 0 1
+0 0 0 1 0
+Output:
+No
