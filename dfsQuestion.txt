@@ -1,0 +1,11 @@
+Print discovered nodes by DFS for an undirected, unweighted graph G with n vertices and source s.
+Input: (n, s, G)
+5
+2
+0 1 1 0 0
+1 0 0 1 0
+1 0 0 1 1
+0 1 1 0 1
+0 0 1 1 0
+Output:
+2 1 3 5 4
