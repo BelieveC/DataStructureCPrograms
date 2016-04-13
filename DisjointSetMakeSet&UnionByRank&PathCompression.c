@@ -8,14 +8,13 @@ struct subset{
 
 int find_set(subset subset[],int i)
 {
-    if(subset[i].parent!=i){
-        find_set(subset,subset[i].parent);
+    int k = i;
+    while(subset[i].parent!=i){
+        i = subset[i].parent;
     }
-    else{
-        return i;
-    }
+    subset[k].parent = i;
+    return i;
 }
-
 void make_set(subset subset[],int i)
 {
     subset[i].rank = 0;
