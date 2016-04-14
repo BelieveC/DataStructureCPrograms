@@ -29,36 +29,42 @@ node* insert(node* root,int data)
     }
     return root;
 }
-int check(node* root)
+int check(node* root,int* checker)
 {
-    if(root==NULL){
-        return 1;
-    }
-    else{
-        if(root->left->value>root->value || root->right->value<=root->value){
-            return 0;
+    if(root!=NULL){
+        if(root->left!=NULL){
+            if(root->left->value>root->value){
+                *checker = 0;
+                return 0;
+            }
         }
-        else{
-            check(root->left);
-            check(root->right);
+        if(root->right!=NULL){
+            if(root->right->value<=root->value){
+                *checker = 0;
+                return 0;
+            }
         }
+        check(root->left,checker);
+        check(root->right,checker);
     }
 }
 
 int main()
 {
     node* root = newnode(2);
+    int checker = 1;
     insert(root,2);
     insert(root,5);
     insert(root,1);
     insert(root,3);
     insert(root,4);
     insert(root,6);
-    /*if(check(root)){
+    check(root,&checker);
+    if(checker==1){
         printf("Yes");
     }
     else{
         printf("No");
-    }*/
+    }
     return 0;
 }
