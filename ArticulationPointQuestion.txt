@@ -1,0 +1,10 @@
+Let G = (V, E) be a connected, undirected graph. An articulation point of G is a vertex whose removal disconnects G (ie braks it into two or more connected components). Find all the articulation points.
+Input: (n, G)
+5
+0 1 1 0 0
+1 0 1 0 0
+1 1 0 1 1
+0 0 1 0 1
+0 0 1 1 0
+Output:
+3
