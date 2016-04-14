@@ -34,7 +34,6 @@ void dfs(int a[],int adjmat[100][100],int*top,int n,char color[][2])
 {
     int i;
     int k = pop(a,top);
-    printf("%d\n",k);
     for(i=1;i<=n;i++){
             if(adjmat[k][i]==1){
                 if(strcmp(color[i],"w")==0){
