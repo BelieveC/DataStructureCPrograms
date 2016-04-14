@@ -1,0 +1,10 @@
+The diameter of a graph G = (V, E) is defined as the largest of the shortest path distances of the tree. Given an undirected unweighted graph, find its diameter.
+Input: (n, G)
+5
+0 1 1 0 0
+1 0 1 1 0
+1 1 0 1 0
+0 1 1 0 1
+0 0 0 1 0
+Output:
+3
