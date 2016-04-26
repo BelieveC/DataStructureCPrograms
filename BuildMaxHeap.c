@@ -1,41 +1,58 @@
 #include<stdio.h>
 #define SIZE 20
 
-void maxheapify(int heap[],int i)
+struct node{
+    int value;
+    int prior;
+}typedef node;
+
+void maxheapify(node arr[],int i,int size)
 {
-    int l = 2i;
-    int r = 2i+1;
+    int left = 2i;
+    int right = 2i+1;
     int largest = i;
-    if(l<=SIZE && heap[l]>heap[largest]){
-        largest = l;
+    if(left<=size && arr[left].prior>arr[i].prior){
+        largest = left;
     }
-    if(r<=SIZE && heap[r]>heap[largest]){
-        largest = r;
+    if(right<=size && arr[right].prior>arr[largest].prior){
+        largest = right;
     }
-    if(i!=largest){
-        int temp = heap[largest];
-        heap[largest] = heap[i];
-        heap[i] = temp;
-        maxheapify(heap,largest);
+    if(largest!=i){
+        swap(arr,i,largest);
+        maxheapify(arr,largest,size);
     }
 }
-void buildmax(int heap[])
+void swap(node arr[],int x,int y)
+{
+    int t1 = arr[x].value;
+    int t2 = arr[x].prior;
+    arr[x].value = arr[y].value;
+    arr[x].prior = arr[y].prior;
+    arr[y].prior = t2;
+    arr[y].value = t1;
+}
+
+void buildheap(node arr[],int size)
 {
     int i;
-    for(i=SIZE/2;i>=1;i--){
-        printf("I am here! %d\n",i);
-        maxheapify(heap,i);
-        printf("MaxHeap Complete %d\n",i);
+    for(i=size/2;i>=1;i--){
+        maxheapify(arr,i,size);
     }
 }
 int main()
 {
-    int heap[SIZE+1];
-    int i,j;
-    for(i=1;i<=SIZE;i++){
-
-        heap[i] = i;
+    node arr[10];
+    int i;
+    for(i=1;i<=9;i++){
+        arr[i].value = i;
+        arr[i].prior = i;
     }
-    buildmax(heap);
+    buildheap(arr,9);
+    for(i=1;i<10;i++){
+        printf("%d ",arr[i].value);
+    }
     return 0;
 }
+
+
+
