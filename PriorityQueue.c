@@ -31,24 +31,46 @@ void maxheapify(node a[],int i,int size)
     }
 
 }
-void buildmaxheap(node a[],int size)
+void insertkey(node arr[],int i,int key,int prior)
 {
-    int i;
-    for(i=size/2;i>=1;i--){
-        maxheapify(a,i,size);
+    if(arr[i].value>key){
+        return;
     }
+    arr[i].value = key;
+    arr[i].prior = prior;
+    while(i>=1 && arr[i/2].prior<arr[i].prior){
+        swap(arr,i,i/2);
+        i = i/2;
+    }
+}
+int maxvalue(node arr[],int* size)
+{
+    if(*size<1){
+        return;
+    }
+    int max = arr[1].value;
+    swap(arr,1,*size);
+    *size = *size -1;
+    maxheapify(arr,1,*size);
+    return max;
+}
+void insert(node arr[],int* size,int key,int prior)
+{
+    *size = *size + 1;
+    arr[*size].value = -999999;
+    insertkey(arr,*size,key,prior);
 }
 int main()
 {
-    int i;
-    node a[10];
-    for(i=1;i<=9;i++){
-        a[i].value = i;
-        a[i].prior = i;
+    int i,key,prior;
+    node arr[10];
+    int size = 0;
+    for(i=1;i<=5;i++){
+        scanf("%d %d",&key,&prior);
+        insert(arr,&size,key,prior);
     }
-    buildmaxheap(a,9);
-    for(i=1;i<=9;i++){
-        printf("%d ",a[i].value);
+    for(i=1;i<=5;i++){
+        printf("%d ",maxvalue(arr,&size));
     }
     return 0;
 }
