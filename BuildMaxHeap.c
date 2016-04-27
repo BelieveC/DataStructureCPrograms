@@ -7,8 +7,8 @@ struct node{
 
 void maxheapify(node arr[],int i,int size)
 {
-    int left = 2i;
-    int right = 2i+1;
+    int left = 2*i;
+    int right = 2*i+1;
     int largest = i;
     if(left<=size && arr[left].prior > arr[i].prior){
         largest = left;
