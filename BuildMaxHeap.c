@@ -1,5 +1,4 @@
 #include<stdio.h>
-#define SIZE 20
 
 struct node{
     int value;
@@ -11,10 +10,10 @@ void maxheapify(node arr[],int i,int size)
     int left = 2i;
     int right = 2i+1;
     int largest = i;
-    if(left<=size && arr[left].prior>arr[i].prior){
+    if(left<=size && arr[left].prior > arr[i].prior){
         largest = left;
     }
-    if(right<=size && arr[right].prior>arr[largest].prior){
+    if(right<=size && arr[right].prior > arr[largest].prior){
         largest = right;
     }
     if(largest!=i){
