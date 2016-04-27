@@ -16,10 +16,10 @@ void swap(node a[],int x,int y)
 }
 void maxheapify(node a[],int i,int size)
 {
-    int left = 2i;
-    int right = 2i+1;
+    int left = 2*i;
+    int right = 2*i+1;
     int largest = i;
-    if(left<=size && a[left].prior>a[i].prior){
+    if(left<=size && a[left].prior>a[largest].prior){
         largest = left;
     }
     if(right<=size && a[right].prior>a[largest].prior){
@@ -47,5 +47,8 @@ int main()
         a[i].prior = i;
     }
     buildmaxheap(a,9);
+    for(i=1;i<=9;i++){
+        printf("%d ",a[i].value);
+    }
     return 0;
 }
