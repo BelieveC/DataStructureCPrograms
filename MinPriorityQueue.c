@@ -64,11 +64,13 @@ int main()
     node arr[10];
     int size = 0;
     insert(arr,&size,3,3);
+    printf("%d\n",arr[0].value);
     insert(arr,&size,2,2);
-    insert(arr,&size,1,1);
+    printf("%d\n",arr[0].value);
+    insert(arr,&size,4,4);
     printf("size = %d\n",size);
-    printf("%d ",minvalue(arr,&size));
-    printf("%d ",minvalue(arr,&size));
-    printf("%d ",minvalue(arr,&size));
+    printf("%d ",arr[0].value);
+    printf("%d ",arr[1].value);
+    printf("%d ",arr[2].value);
     return 0;
 }
