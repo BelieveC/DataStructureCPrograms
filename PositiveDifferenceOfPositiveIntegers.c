@@ -11,6 +11,6 @@ int diff(int arr[],int x,int y)
 int main()
 {
     int arr[] = {57393,29849,9283839,20202,2898929};
-    printf("%d",diff(arr,1,3));
+    printf("%d\n",diff(arr,1,3));
     return 0;
 }
