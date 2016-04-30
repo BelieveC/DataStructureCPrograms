@@ -1,0 +1,5 @@
+Write an algorithm to remove all the nodes from a given linked list that have a greater value to their right.
+ Example I: Input: 10 -> 12 -> 15 -> 20 -> 5 -> 16 -> 25 -> 8 -> NULL
+ Output: 20 -> 25 -> 8 -> NULL 
+Example II Input: 10 -> 12 -> 15 -> 20 -> 25 -> 26 -> 30 -> 40 -> NULL 
+Output: 40 -> NULL
