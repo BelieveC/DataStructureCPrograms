@@ -1,0 +1,4 @@
+Let X[1], X[2], . . . , X[n] be an array consisting of n very 
+large +ve integers. Design an efficient algorithm to determine 
+the minimum positive difference between any two integers in the array and a
+lso discuss the complexity of your algorithm.
