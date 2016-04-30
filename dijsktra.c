@@ -12,6 +12,14 @@ int mindis(int dist[],int sptSet[])
     }
     return min_index;
 }
+void print(int dist[])
+{
+    int i;
+    for(i=0;i<V;i++){
+        printf("Index %d = %d\n",i,dist[i]);
+    }
+
+}
 void dijsktra(int src,int arr[V][V])
 {
     int dist[V];
@@ -28,9 +36,12 @@ void dijsktra(int src,int arr[V][V])
         int min_index = mindis(dist,sptSet);
         sptSet[min_index] = 1;
         for(i=0;i<V;i++){
-            if(arr[min_index][i])
+            if(dist[i]>dist[min_index]+ arr[min_index][i]){
+                dist[i] = dist[min_index]+arr[min_index][i];
+            }
         }
     }
+    print(dist);
 
 }
 int main()
