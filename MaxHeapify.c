@@ -2,20 +2,20 @@
 #define SIZE 21
 int parent(int i)
 {
-    return 2i;
+    return 2*i;
 }
 int lchild(int i)
 {
-    return 2i;
+    return 2*i;
 }
 int rchild(int i)
 {
-    return 2i+1;
+    return 2*i+1;
 }
 void maxheapify(int heap[],int i)
 {
-    int lc = 2i;
-    int rc = 2i+1;
+    int lc = 2*i;
+    int rc = 2*i+1;
 
     int largest = i;
     if(lc<SIZE && heap[lc]>heap[i]){
