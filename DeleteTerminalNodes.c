@@ -116,9 +116,7 @@ void deltermnode(node* root)
         return;
     }
     else if(root->left==NULL && root->right==NULL){
-        printf("I am Here lets delete %d\n",root->value);
         deletenode(root,root->value);
-         printf("I am Here delete complete\n");
     }
     else{
         deltermnode(root->left);
