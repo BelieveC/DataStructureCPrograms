@@ -38,7 +38,7 @@ void insertkey(node arr[],int i,int key,int prior)
     }
     arr[i].value = key;
     arr[i].prior = prior;
-    while(i>=1 && arr[i/2].prior<arr[i].prior){
+    while(i>1 && arr[i/2].prior<arr[i].prior){
         swap(arr,i,i/2);
         i = i/2;
     }
