@@ -115,7 +115,7 @@ int main()
         }
     }
     printf("Largest = %d\n",largest);
-    printf("%d",dis[largest]);
+    printf("%d\n",dis[largest]);
 
     return 0;
 }
